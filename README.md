@@ -25,7 +25,7 @@ Data using in this case study is downloaded from: https://www.kaggle.com/podsyp/
 With the data from the roasting machine in data_X file and quality data in data_Y file, we need to build the predictive model predict the future data.
 
 ## 3.3 Preprocessing data:
-These steps using SQL
+These steps using SQL Server
 * From the original data_X file, every observation is the result from every minutes, since the data_Y generated data from every hours. We need to group the data_X in hour by using the mean values of 60 minutes.
 * Then we join the updated data_X and data_Y using datetime columns. The dataset finally split into training and testing data with the ratio 6:4 respectively.
 * Since we will use the classification model to predict Y values into "good" or "suspect" classes, we need to convert Y values into category variables. In Statistical Process Control (SPC), we using the Control Chart with 6-Sigma to identify the 'Good Quality Range'. The values in 6-Sigma will be labeled as 'Good' and the other values labeled 'Suspect'
